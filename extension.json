@@ -1,0 +1,6 @@
+{
+  "name": "HTML/CSS/JS Replit Extension Starter",
+  "description": "A starter template for a Replit Extension with HTML, CSS, and JavaScript",
+  "version": "0",
+  // See this for more info: https://docs.replit.com/extensions/api/manifest
+}
