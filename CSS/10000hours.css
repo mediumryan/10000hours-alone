@@ -340,6 +340,11 @@ button:hover {
     --size-margin-large: 36px;
     --size-margin-medium: 26px;
     --size-margin-small: 12px;
+    /* padding */
+    --size-padding-large: 36px;
+    --size-padding-medium-large: 24px;
+    --size-padding-medium: 16px;
+    --size-padding-small: 8px;
   }
   .title_wrap .clock_img {
     width: 128px;
