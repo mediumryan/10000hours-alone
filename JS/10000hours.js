@@ -1,80 +1,80 @@
-"use strict";
+$(function () {
+  const inputExpert = $("#input_expert");
+  const inputTime = $("#input_time");
+  const startButton = $(".start_btn");
+  const closeButton = $(".close_btn");
+  const goButton = $(".go_btn");
+  const shareButton = $(".share_btn");
+  const modal = $("#modal");
+  const loading = $(".loading_wrap");
+  const results = $(".results_wrap");
+  const expertResult = $(".expert_result");
+  const timeResult = $(".time_result");
 
-const inputExpert = document.querySelector("#input_expert");
-const inputTime = document.querySelector("#input_time");
-const startButton = document.querySelector(".start_btn");
-const closeButton = document.querySelector(".close_btn");
-const goButton = document.querySelector(".go_btn");
-const shareButton = document.querySelector(".share_btn");
-const modal = document.getElementById("modal");
-const loading = document.querySelector(".loading_wrap");
-const results = document.querySelector(".results_wrap");
+  // 시작버튼 핸들러
 
-// 시작버튼 핸들러
+  function calculator() {
+    const expertValue = inputExpert.val();
+    const timeValue = inputTime.val();
+    const timeValue_int = Number(timeValue);
 
-function calculator() {
-  const expertValue = inputExpert.value;
-  const timeValue = inputTime.value;
-  const timeValue_int = Number(timeValue);
-  const expertResult = document.querySelector(".expert_result");
-  const timeResult = document.querySelector(".time_result");
-
-  expertResult.innerText = expertValue;
-  timeResult.innerText = parseInt(10000 / timeValue_int, 10);
-}
-
-function handleDisplay() {
-  loading.style.display = "block";
-  results.style.display = "none";
-  setTimeout(() => {
-    loading.style.display = "none";
-    results.style.display = "flex";
-  }, 1200);
-}
-
-function handleStart() {
-  handleDisplay();
-  setTimeout(() => {
-    calculator();
-  }, 1200);
-}
-
-startButton.addEventListener("click", handleStart);
-
-// 계산하기 버튼 핸들러
-
-function handleGo() {
-  modal.style.display = "flex";
-}
-
-// 훈련가기 버튼 핸들러
-
-goButton.addEventListener("click", handleGo);
-
-function handleClose() {
-  modal.style.display = "none";
-}
-
-window.onclick = (e) => {
-  if (e.target == modal) {
-    modal.style.display = "none";
+    expertResult.text(expertValue);
+    timeResult.text(parseInt(10000 / timeValue_int, 10));
   }
-};
 
-closeButton.addEventListener("click", handleClose);
+  function handleDisplay() {
+    loading.css("display", "block");
+    results.css("display", "none");
+    setTimeout(() => {
+      loading.css("display", "none");
+      results.css("display", "flex");
+    }, 1200);
+  }
 
-// 공유 버튼 핸들러
+  function handleStart() {
+    handleDisplay();
+    setTimeout(() => {
+      calculator();
+    }, 1200);
+  }
 
-function handleShare() {
-  const url = window.location.href;
-  navigator.clipboard
-    .writeText(url)
-    .then(() => {
-      alert("URL이 복사되었습니다.");
-    })
-    .catch((err) => {
-      console.error("복사 실패: ", err);
-    });
-}
+  startButton.on("click", handleStart);
 
-shareButton.addEventListener("click", handleShare);
+  // 계산하기 버튼 핸들러
+
+  function handleGo() {
+    modal.css("display", "flex");
+  }
+
+  // 훈련가기 버튼 핸들러
+
+  goButton.on("click", handleGo);
+
+  function handleClose() {
+    modal.css("display", "none");
+  }
+
+  modal.on("click", (e) => {
+    if (e.target == modal) {
+      modal.css("display", "none");
+    }
+  });
+
+  closeButton.on("click", handleClose);
+
+  // 공유 버튼 핸들러
+
+  function handleShare() {
+    const url = window.location.href;
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        alert("URL이 복사되었습니다.");
+      })
+      .catch((err) => {
+        console.error("복사 실패: ", err);
+      });
+  }
+
+  shareButton.on("click", handleShare);
+});
