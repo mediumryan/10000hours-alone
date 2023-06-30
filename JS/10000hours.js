@@ -69,7 +69,7 @@ $(function () {
     navigator.clipboard
       .writeText(url)
       .then(() => {
-        alert("URL이 복사되었습니다.");
+        alert("URLがコピーされました.");
       })
       .catch((err) => {
         console.error("복사 실패: ", err);
