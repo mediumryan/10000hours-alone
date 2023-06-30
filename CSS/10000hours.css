@@ -8,10 +8,7 @@
   --color-yellow: #f5df4d;
   --color-grey: #babcbe;
   /* font-family */
-  --font-family-Noto: "Noto Sans KR";
-  --font-family-Enjoy: "OTEnjoystoriesBA";
-  --font-family-G-Medium: "GmarketSansMedium";
-  --font-family-G-Bold: "GmarketSansBold";
+  --main-font-family: "M PLUS 1p", sans-serif;
   /* font-size */
   --font-size-large: 70px;
   --font-size-medium-large: 36px;
@@ -30,47 +27,11 @@
   /* animation */
   --animation-duration: 300ms;
 }
-/* 폰트 (4종류) */
-@font-face {
-  font-family: "OTEnjoystoriesBA";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "GmarketSansBold";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "GmarketSansMedium";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 400;
-  src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2")
-      format("woff2"),
-    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff")
-      format("woff"),
-    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf")
-      format("opentype");
-}
 
 body {
   background-color: var(--color-violet);
   color: var(--color-white);
-  font-family: var(--font-family-G-Medium);
+  font-family: var(--main-font-family);
   height: 100%;
 }
 
@@ -87,7 +48,7 @@ button {
   font-size: var(--font-size-medium);
   color: var(--color-violet);
   background-color: var(--color-yellow);
-  font-family: var(--font-family-G-Bold);
+  font-family: var(--main-font-family);
   line-height: 1.7;
   opacity: 0.77;
   transition: var(--animation-duration) all;
@@ -129,7 +90,7 @@ button:hover {
 }
 /* 명언 */
 .quotes_wrap p {
-  font-family: var(--font-family-Enjoy);
+  font-family: var(--main-font-family);
   color: var(--color-yellow);
   font-size: var(--font-size-medium-large);
 }
@@ -149,7 +110,7 @@ button:hover {
 }
 
 .explain_wrap p span {
-  font-family: var(--font-family-G-Bold);
+  font-family: var(--main-font-family);
   font-size: var(--font-size-medium);
 }
 /* 사용자 입력창 */
@@ -232,7 +193,7 @@ button:hover {
 
 .expert_result,
 .time_result {
-  font-family: var(--font-family-G-Bold);
+  font-family: var(--main-font-family);
   padding: 0 var(--size-padding-medium);
   font-size: var(--font-size-large);
 }
@@ -274,13 +235,13 @@ button:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--size-padding-medium) 0 calc(--size-padding-medium / 2) 0;
-  font-family: var(--font-family-Enjoy);
+  padding: var(--size-padding-medium) 0 calc(var(--size-padding-medium) / 2) 0;
+  font-family: var(--main-font-family);
 }
 
 .cheer_top {
   font-size: var(--font-size-large);
-  margin-bottom: calc(--size-margin-small);
+  margin-bottom: calc(var(--size-margin-small));
 }
 
 .cheer_bottom {
